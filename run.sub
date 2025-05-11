@@ -1,0 +1,11 @@
+#!/bin/bash
+# FILENAME:  run.sub
+#SBATCH  --nodes=1
+#SBATCH  --ntasks-per-node=30
+#SBATCH  --time=14-00:00:00
+#SBATCH  -A kimty
+
+module load gcc
+module load openmpi
+
+mpirun -n 30 ./main

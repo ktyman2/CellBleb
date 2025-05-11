@@ -1,0 +1,270 @@
+Directory for saving data = data
+======================= Parameters for parallel processing =====================
+MPI method(normal/plympton) = normal
+Period of adjusting subdomain size(in s, -1 for deactivation) = 1
+========== Parameters for coarse-graining using cylindrical segments ===========
+Length of cylindrical segments for actins(=i*7nm) = 20
+Number of binding sites on each segment in longitudinal and transverse directions = 20, 10
+======================= Parameters for network condition =======================
+Load network data from Config(yes/no) = no
+If no, width of domain(x, y, z in um) = 16, 16, 16
+If not bulk rheology, periodic boundary condition(yes/no in x, y, z) = no, no, no
+If 2D network, specifiy the normal direction(no, x, y, or z) = no
+Load information of actins which are previously fixed and clamped = no
+Duration of network formation(s) = 10
+Actin concentration(in uM or given) = 1
+ACPC density(R value or given) = 0
+ACPB density(R value or given) = 0.1
+Motor density(R value or given) = 0.0025
+=================== Parameters for rheological measurement =====================
+Rheology method(0: neither, 1: segment, 2: bulk, 3: both) = 0
+Duration of simulation(s) = 1000
+Duration of motor activation before measurement(s) = 0
+------------------------------ If segment rheology -----------------------------
+Choose list of components whose trajectories are recorded(yes/no) = yes
+If yes, portion of actin and ABP segments to be chosen(0-1) = 0, 0
+Period of recording trajectory(s) = 0.1
+------------------------------- If bulk rheology -------------------------------
+Controlled factor in rheometer(stress/strain) = stress
+Type of the controlled factor(shear/normal) = normal
+Direction of the controlled factor = +x
+If shear, direction normal to the sheared surface = z
+Amount of prestress or prestrain(Pa or unitless) = 2000
+Rate of prestress or prestrain(Pa/s or 1/s) = 100
+Amplitude of sinusoidal stress or strain(Pa or unitless) = 0.0000001
+Period of sinusoidal stress or strain(s) = 10.0
+Lower and uppder limits of strain beyond which a run is terminated = -10, 3
+Period of recording stress and strain(s) = 0.1
+-------------------------------- For microrheology -----------------------------
+Include bead for microrheology(yes/no) = no
+Number of bead = 1
+Radius of bead(um) = 0.5
+Strength and relative thickness for repulsive forces between bead and others(Kr=i*Kr_0) = 1.0, 0.05
+Period of recording bead location(in s, -1 for deactivation) = 0.01
+Allow binding between actins and beads(yes/no) = no
+Microrheology method(passive/active) = active
+----------------------------- If active microrheology --------------------------
+Direction of sinusoidal displacement = x
+Controlled factor(force/displacement) = force
+Amount of pre-force or pre-displacement(pN or nm) = 0
+Rate of pre-force or pre-displacement(pN/s or nm/s) = 10
+Amplitude of sinusoidal force or displacement(pN or nm) = 10
+Period of sinusoidal displacement(s) = 1
+==================== Toggle the dynamic behaviors of actin =====================
+Allow the thermal fluctuation of actin filaments(yes/no) = yes
+Allow actin nucleation/assembly/disassembly/severing during network formation and during prestrain/prestress(yes/no) = yes, yes
+Allow de novo nucleation of actins(0: no, 1: stochastic, 2: constant # of filaments) = 1
+Allow assembly of actins(yes/no) = yes
+Allow disassembly of actins(yes/no) = no
+Allow bursting disassembly of actins(yes/no) = no
+Allow capping of actin filaments at ends(yes/no) = no
+Allow uncapping of actin filaments(yes/no) = no
+Allow severing of actin filaments(yes/no) = yes
+Allow capping of actin filaments at barbed and pointed ends by severing(yes/no) = no, no
+Allow bursting disassembly of actin filaments from barbed and pointed ends by severing(yes/no) = no, no
+Allow annealing of actin filaments(yes/no) = no
+Allow degradation of actins(yes/no) = no
+===================== Toggle the dynamic behaviors of ACP ======================
+Allow the thermal fluctuation of ACPs(yes/no) = yes
+Allow ACP unbinding/binding during network formation and during prestrain/prestress(yes/no) = yes, yes
+Allow unbinding of inactive ACPs(yes/no) = yes
+Allow binding of monomeric ACPs(yes/no) = yes
+Allow unbinding of active ACPs(yes/no) = no
+Allow binding of inactive ACPs(yes/no) = yes
+If yes, allow binding of inactive ACPs only near assigned angles(90 deg for ACPC, 0 or 180 deg for ACPB) = no
+Allow implicit consideration of monomeric ACPs(yes/no) = yes
+==================== Toggle the dynamic behaviors of motor =====================
+Allow the thermal fluctuation of motors(yes/no) = yes
+Allow motor unbinding/binding during network formation and during prestrain/prestress(yes/no) = yes, yes
+Allow motor walking during network formation and during prestrain/prestress(yes/no) = no, yes
+Allow walking of motors(0: no, 1: w/o slide-off, 2: w/ slide-off) = 2
+Allow self-assembly of motors into filaments(0: no, 1: stochastic, 2: constant size) = 2
+----------------------- If motors are independent dimers -----------------------
+Allow unbinding of inactive motors(yes/no) = yes
+Allow binding of monomeric motors(yes/no) = yes
+Allow unbinding of active motors(yes/no) = yes
+Allow binding of inactive motors(yes/no) = yes
+If yes, allow binding of inactive motors only when actin filaments are parallel or anti-parallel(0: no, 1: anti-parallel, 2: parallel or anti-parallel) = 0
+Allow implicit consideration of monomeric motors(yes/no) = no
+------------------------- If motors are self-assembled -------------------------
+Allow unbinding of motors(yes/no) = yes
+Allow binding of motors(yes/no) = yes
+If yes, allow binding of motors only when actin filaments are favorably aligned with motor filaments(yes/no) = yes
+If yes, allow binding of motors in a dimer only when they face in opposite directions(yes/no) = no
+Allow turnover of motor filaments(0: no, 1: free, 2: free & force-dependent) = 1
+============ Parameters for the dynamic behaviors of actin and ABPs ============
+Period of equilibration of counter for actin and ABPs in monomeric states(in s, -1 for deactivation) = 0.1
+================ Parameters for the dynamic behaviors of actin =================
+k for actin de novo nucleation(1/uM s) = 0.000001
+k for actin assembly at barbed and pointed ends(1/uM s) = 60, 0
+k for actin disassembly at barbed and pointed ends(1/s) = 0, 0
+Factor for varying disassembly rate of actin with ACPs or motors = 1.0
+k for actin bursting disassembly at barbed and pointed ends(1/s) = 0.1, 0.1
+Factor for varying bursting disassembly rate of actin with ACPs or motors = 1.0
+k0 and x for actin severing induced by buckling(k in 1/s, x in deg) = 0, 1.6
+Critical force for actin severing induced by tensile force(in pN, -1 for deactivation) = 300
+Factor for varying severing rate of actin with ACPs or motors = 1.0
+k and angular constraint for actin annealing(k in 1/s, angle in deg) = 1.0, 10.0
+k for actin capping at barbed and pointed ends(1/s) = 1.0, 1.0
+k for actin uncapping at barbed and pointed ends(1/s) = 1.0, 1.0
+k for actin degradation(1/s) = 10
+x1 and x2 for actin degradation(distance, force) = 0, 0
+Distance for actin degradation(nm) = 150
+================= Parameters for the dynamic behaviors of ACP ==================
+k for ACP binding(k=i*k_0) = 1.0
+k0 and x for ACP slip unbinding = 0.115, 104.0e-12
+k0 and x for ACP catch unbinding = 0, -4.0e-9
+================ Parameters for the dynamic behaviors of motor =================
+k for motor binding(k=i*k_0) = 1.0
+k0 for motor unbinding and walking(k0=i*k0_0) = 1.0
+Number of heads which each motor arm represents = 4
+Transition rates between mechanochemical states in each head(k01, k10, k12, k21, k20 in 1/s) = 40, 2, 1000, 1000, 20
+------------------------- If motors are self-assembled -------------------------
+Average number of motors per each self-assembled structure = 8
+Period of equilibration of counter for motor self-assembly(in s, -1 for deactivation) = 0.1
+k for motor assembly(in 1/s) = 1e0
+k for motor free turnover(in 1/s) = 1e0
+k0 and x for motor force-dependent turnover(k0 in 1/s, x in m) = 1e-3, -1e-10
+======== Adjustment for rates of the dynamic behaviors of actin and ABP ========
+During network formation(i*k) = 100
+During prestrain/prestress(i*k) = 1
+During motor activation(i*k) = 1
+=============== Parameters for the mechanical behaviors of actin ===============
+Strength of repulsive forces between actin filaments(Kr=i*Kr_0) = 1
+Bending stiffness of actin filaments(Kb=i*Kb_0) = 1.0
+Extensional stiffness of actin filaments(Ks=i*Ks_0) = 1.0
+================ Parameters for the mechanical behaviors of ABP ================
+Strength of repulsive forces between actin and ABP and between ABPs(Kr=i*Kr_0) = 0
+Bending stiffness which maintains an assigned angle between two arms of ACPC, ACPB, and motor(Kb=i*Kb_0) = 1.0, 1.0, 1.0
+Bending stiffness which maintains 90 deg between the axis of a filament and the arm of ACPC, ACPB, and motor(Kb=i*Kb_0) = 1, 0, 0
+Extensional stiffness of ACPC, ACPB, and motor(Ks=i*Ks_0) = 1.0, 1.0, 1.0
+==================== Toggles and parameters for boundaries =====================
+Radius of circular or spherical boundary(in um, -1 for deactivation) = -1
+Allow movement of boundaries following stress-strain relation(yes/no) = no
+Stiffness of surrounding medium on -x,+x,-y,+y,-z,+z boundaries and unit(Pa or N/m) = 10000, 10000, 10000, 10000, 10000, 10000, Pa
+If stiffness is given in Pa, thickness of surrounding medium on -x,+x,-y,+y,-z,+z boundaries(um) = 5, 5, 5, 5, 5, 5
+Allow conservation of volume encapsulated by boundaries(yes/no) = no
+Stiffness of volume conservation(Kv=i*Kv_0) = 1
+Allow unbinding of actin filaments from boundaries(yes/no) = no
+k0 and x for unbinding on -x,+x,-y,+y,-z,+z boundaries(k0=i1*k0_0, x=i2*x_0): i1 = 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, i2 = 1.0, 1.0, 1.0, 1.0, 1.0, 1.0
+Allow binding of actin filaments on boundaries(0: no, 1: only ends, 2: entire part) = 0
+Distance from boundaries at which binding is allowed(nm) = 50.0
+k for binding on -x,+x,-y,+y,-z,+z boundaries(k=i*k_0) = 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0
+Links between actin filaments and boundaries(direct/spring) = direct
+If links are spring, stiffness of springs on -x,+x,-y,+y,-z,+z boundaries(Ks=i*Ks_0) = 1.0, 1.0, 1.0, 1.0, 1.0, 1.0
+If links are direct, allow movement of clamped actin filaments on boundaries(yes/no) = no
+Drag coefficient of the movement on -x,+x,-y,+y,-z,+z boundaries(=i*actin) = 100.0, 100.0, 100.0, 100.0, 100.0, 100.0
+Allow maturation of links between actin filaments and boundaries(0: no, 1: only ends, 2: entire part) = 0
+k0 and x for maturation(k0=i1*k0_0, x=i2*x_0) = 1, 1
+Maximum level of the maturation = 20
+Period of recording boundary location(in s, -1 for deactivation) = -1
+Period of recording unbinding or binding on boundaries(in s, -1 for deactivation) = -1
+Period of recording maturation on boundaries(in s, -1 for deactivation) = -1
+Period of recording traction forces on boundaries(in s, -1 for deactivation) = -1
+===================== Parameters for membrane and nucleus ======================
+Include membrane that surrounds the network(yes/no) = yes
+Include nucleus within the membrane(yes/no) = no
+Load data of membrane/nucleus from Config(yes/no) = no
+Dimension of membrane/nucleus(2/3) = 3
+If the dimension is 2, direction of their central axis = z
+Number of membrane/nucleus = 1
+================================= For membrane =================================
+Radius of membrane(um) = 4.0
+Length and diameter of segments that constitute membrane(um) = 0.07, 0.05
+Drag coefficient of membrane segments(=i*actin) = 1.0
+Bending stiffness of membrane(Kb=i*Kb_0) = 1.0
+Extensional stiffness of membrane(Ks=i*Ks_0) = 1.0
+Extensional stiffness of a bond between membrane and bound actins(Ks=i*Ks_0) = 1.0
+Allow the conservation of volume surrounded by membrane(yes/no) = yes
+Stiffness of volume conservation(Kv=i*Kv_0) = 1
+Allow the conservation of membrane area(0: no, 1: local, 2: global) = 1
+Stiffness of area conservation(Ka=i*Ka_0) = 1
+Allow the thermal fluctuation of membrane(yes/no) = no
+Allow protrusion of membrane points(yes/no) = no
+k for protrusion(k=i*k_0) = 1.0
+Allow chemotaxis for protrusion(yes/no) = no
+Relative location of destination in x,y,z(0-1) = 0.5, 0, 0
+Force of protrusion(in pN) = 100
+Duration of protrusion(in s) = 5
+Allow fixation of membrane points(yes/no) = no
+k for fixation of membrane points(k=i*k_0) = 0.01
+Allow release of fixed membrane points(yes/no) = no
+k0 and x for release of fixed membrane points(k0=i1*k0_0, x=i2*x_0) = 1, 1
+Side where actins exist with respect to membrane(inside/outside) = inside
+If inside, relative thickness from membrane within which actin nucleation is allowed(0-1) = 0.1
+If outside, include implicit cortical contractility(yes/no) = no
+Allow binding to membrane(0: no, 1: static link, 2: sliding only) = 2
+If yes, allow the binding of entire parts of the filaments(yes/no) = no
+--------------- Static link between actin filaments and membrane ---------------
+Portion of binding points on membrane = 1.0
+Maximum number of actin filaments binding to one point on membrane = 5
+k for binding(k=i*k_0) = 1.0
+Allow unbinding of actin filaments from points on membrane(yes/no) = no
+k0 and x for unbinding(k0=i1*k0_0, x=i2*x_0) = 1.0, 1.0
+Allow maturation of a link between actin filaments and membrane(0: no, 1: only ends, 2: entire part) = 0
+k0 and x for maturation(k0=i1*k0_0, x=i2*x_0) = 1, 8
+Maximum level of the maturation = 20
+---------------------------------- Sliding only --------------------------------
+Elements to interact(0: actin, 1: ABP, 2: both) = 1
+Max portion of actin filaments and ABPs bound to membrane = 0, 0.1
+Distance within which elements are bound to membrane(nm) = 60
+Equilibrium distance between elements and membrane(nm) = 30
+Stiffness of elastic constraint between elements and membrane in a normal direction(N/m) = 0.001
+Drag coefficient between elements and membrane in a tangential direction(=i*actin) = 1
+================================== For nucleus =================================
+Radius of nucleus(um) = 2.0
+Length and diameter of segments that constitute nucleus(um) = 0.35, 0.2
+Drag coefficient of nucleus segments(=i*actin) = 1.0
+Bending stiffness of nucleus(Kb=i*Kb_0) = 1.0
+Extensional stiffness of nucleus(Ks=i*Ks_0) = 1.0
+Extensional stiffness of a bond between nucleus and bound actins(Ks=i*Ks_0) = 1.0
+Allow the conservation of volume surrounded by nucleus(yes/no) = yes
+Stiffness of volume conservation(Kv=i*Kv_0) = 6
+Allow the conservation of nucleus area(0: no, 1: local, 2: global) = 1
+Stiffness of area conservation(Ka=i*Ka_0) = 1
+Allow the thermal fluctuation of nucleus(yes/no) = no
+Allow binding of actin filaments to points on nucleus(0: no, 1: only ends, 2: entire part) = 0
+Portion of binding points on nucleus = 1.0
+Maximum number of actin filaments binding to one point on nucleus = 5
+k for binding(k=i*k_0) = 1.0
+Allow unbinding of actin filaments from points on nucleus(yes/no) = no
+k0 and x for unbinding(k0=i1*k0_0, x=i2*x_0) = 1.0, 1.0
+======================== Parameters for data recording =========================
+Period of recording Output and Progress(s) = 0.1
+----------------------------- Structural information ---------------------------
+Period of recording Config(in s, -1 for deactivation) = 1
+Period of recording structural information for visualization via MATLAB(in s, -1 for deactivation) = -1
+Period of recording structural information for visualization via VMD(in s, -1 for deactivation) = 1
+Number of VMD files(multiple/single) = single
+Show the boundaries of a network drawn by VMD(yes/no) = yes
+Record information for coloring a network drawn by VMD(yes/no) = yes
+Lower and upper limits of forces for coloring(in pN) = 0, 100
+Period of recording structural information for visualization via Paraview(in s, -1 for deactivation) = 1
+Period of recording length of actin filaments(in s, -1 for deactivation) = 1
+Period of recording size of self-assembled motors(in s, -1 for deactivation) = -1
+Period of recording position of self-assembled motors(in s, -1 for deactivation) = -1
+Period of recording distances between active ABPs(in s, -1 for deactivation) = 1
+Period of recording pore size(in s, -1 for deactivation) = -1
+Period of recording connectivity(in s, -1 for deactivation) = -1
+Period of recording percolation(in s, -1 for deactivation) and direction = -1, x
+Period of finding supportive framework(in s, -1 for deactivation) = -1
+If yes, portion and the kind of ABP forces for finding the supportive framework(0-1, bending/extension) = 0.2, bending
+--------------------------- Force, stress, and energy --------------------------
+Period of recording longitudinal forces of ABPs(in s, -1 for deactivation) = 1
+Period of recording mechanical energy(in s, -1 for deactivation) = 1
+Period of recording internal elastic/viscous stresses(in s, -1 for deactivation), coordinate(Cartesian or cylindrical), and the number of measurements(in x, y, z for Cartesian or in r, theta, z for cylindrical) = -1, Cartesian, 10, 10, 1
+--------------------- Dynamic behaviors of actin and ABPs ----------------------
+Period of recording actin severing(in s, -1 for deactivation) = -1
+Period of recording ABP unbinding(in s, -1 for deactivation) = -1
+Period of recording ABP binding(in s, -1 for deactivation) = -1
+Period of recording ABP turnover(in s, -1 for deactivation) = -1
+Period of recording the number of dynamic events of individual ABPs(in s, -1 for deactivation) = -1
+------------------------------- Membrane/nucleus -------------------------------
+Period of recording center of membrane/nucleus(in s, -1 for deactivation) = 1
+Period of recording dimensions of membrane/nucleus(in s, -1 for deactivation) = 1
+---------------------------------- Miscellany ----------------------------------
+Period of recording information in unit of individual elements, filament segments, and filaments(in s, -1 for deactivation) = 1
+
+Biased factor(-1: nothing, 0: ACP binding, 1: motor binding, 2: coupling) = 2
+Relative thickness of a biased region = 0.2
+Relative change in the biased factor = 0.00001
